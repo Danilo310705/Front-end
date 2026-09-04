@@ -1,0 +1,103 @@
+<div class="container" >
+    <h1>Ola, {{ nome }}</h1>
+    <button (click)="mudarNome()">Trocar Nome</button>
+
+</div>
+<div style="text-align: center; margin-top: 50px;">
+    <h1>Ex: Calculadora</h1>
+    <p><label for="numero1">numero 1</label>
+    <input [(ngModel)]="number1" id="numero1" type="number" ></p>
+    <p><label for="numero2">numero 2</label>
+    <input [(ngModel)]="number2" id="numero2" type="number" ></p>
+    <button (click)="somar()">Somar</button>
+    <div>
+        Resultado: {{ resultado }}
+    </div>
+</div>
+<div style="text-align: center; margin-top: 50px;">
+    <h1>1 - Troco</h1>
+    <p><label for="valorPago">Valor pago</label>
+    <input [(ngModel)]="valorPago" id="valorPago" type="number"></p>
+    <p><label for="valorItem"><br>Valor pago</label>
+    <input [(ngModel)]="valorItem" id="valorItem" type="number"></p>
+    <button (click)="calcularTroco()">Calcular</button>
+    <div>Valor do troco: {{resultadoTroco}}</div>
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+    <h1>2 - Valor por quilo</h1>
+    <p><label for="valorDQuilo">Valor do quilo</label>
+    <input [(ngModel)]="valorDQuilo" id="valorDQuilo" type="number" ></p>
+    <p><label for="quantDQuilo">Quilos do produto</label>
+    <input [(ngModel)]="quantDQuilo" id="quantDQuilo" type="number" ></p>
+    <button (click)="valorPorPeso()">Calcular</button>
+    <div>Valor a Pagar {{resultadoQuilo}}</div>
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+    <h1>3 - Reajuste de valor</h1>
+    <p><label for="valorSemReajuste">Valor atual</label>
+    <input [(ngModel)]="valorSemReajuste" id="valorSemReajuste" type="number" ></p>
+    <button (click)="calcularReajuste()" >Calcular</button>
+    <div>Valor com reajuste de 1%: {{valorComReajuste}} </div>
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+    <h1>4 - Calculadora de medias</h1>
+    <p><label for="numero1">Informe o numero 1</label>
+    <input [(ngModel)]="numero1" id="numero1" type="number" ></p>
+    <p><label for="numero2">Informe o numero 2</label>
+    <input [(ngModel)]="numero2" id="numero2" type="number" ></p>
+    <p><label for="numero3">Informe o numero 3</label>
+    <input [(ngModel)]="numero3" id="numero3" type="number" ></p>
+    <button (click)="calcularMedias()">Calcular</button>
+    <div *ngIf="resutMediaArit !== null ">
+        <p><strong>MediaAritmetica:</strong> {{resutMediaArit | number:'1.2-2'}}</p>
+        <p><strong>Media Ponderada:</strong> {{resutMediaPond | number:'1.2-2'}}</p> 
+        <p><strong>Soma Medias:</strong> {{somaDasMedias | number:'1.2-2'}}</p>
+        <p><strong>Media das medias:</strong> {{mediaDasMedias | number:'1.2-2'}}</p>    
+    </div>
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+    <h1>5 - O Retorno do Maior</h1>
+    <p><label for="valor1">Informe um numero</label>
+    <input [(ngModel)]="valor1" id="valor1" type="number" ></p>
+    <p><label for="valor2">Informe um numero</label>
+    <input [(ngModel)]="valor2" id="valor2" type="number" ></p>
+    <button (click)="verificarOMaior()">Verificar</button>
+    <div>O maior é {{oMaior}}</div>
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+    <h1>6 - O Retorno do Menor</h1>
+    <p><label for="valor4">Informe um numero</label>    
+    <input [(ngModel)]="valor4" id="valor4" type="number" ></p>
+    <p><label for="valor5">Informe um numero</label>    
+    <input [(ngModel)]="valor5" id="valor5" type="number" ></p>
+    <p><label for="valor6">Informe um numero</label>
+    <input [(ngModel)]="valor6" id="valor6" type="number" ></p>
+    <p><label for="valor7">Informe um numero</label>
+    <input [(ngModel)]="valor7" id="valor7" type="number" ></p>
+
+    <button (click)="verificarOMenor()">Verificar</button>
+    <div>O menor é {{oMenor}}</div>
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+    <h1>7 - Impa ou par?</h1>
+    <p><label for="valor">Informe um numero</label>
+    <input [(ngModel)]="valor" id="valor" type="number" ></p>
+    <button (click)="verificarImpOuPar()">Verificar</button>
+    <div>O numero é {{parImpar}} </div>
+</div>
+
+<div style="text-align: center; margin-top: 50px; margin-bottom: 50px;">
+    <h1>8 - Pesquisa por codigo</h1>
+    <p><label for="cod">Informe um numero</label>
+    <input [(ngModel)]="cod" id="cod" type="number" ></p>
+    <button (click)="buscaPorCodigo()">Verificar</button>
+    <div>O produto é {{produto}} </div>
+</div>
+
+

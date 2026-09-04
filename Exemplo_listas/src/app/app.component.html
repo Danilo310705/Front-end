@@ -1,0 +1,45 @@
+<div style="max-width: 400px; margin: auto; padding: 20px;">
+  <h1>Lista de Nomes</h1>
+  <label for="novoNome">Novo nome</label>
+  <input [(ngModel)]="novoNome" id="novoNome" type="text">
+  <button (click)="adicionarNome()">Adicionar Nome</button>
+  <!--Lista de nomes-->
+  <ul>
+    <li *ngFor="let nome of listaNomes; let i = index" >
+      {{nome}}
+      <button (click)="removerNome(i)">Remover</button>
+    </li>
+  </ul>
+</div>
+
+<div style="max-width: 400px; margin: auto; padding: 20px;">
+  <h1>1 - exercio lista Numeros</h1>
+  <input [(ngModel)]="novoNumero" type="number" placeholder="AdicionarNumero">
+  <button (click)="adicionarNumero()" >AdicionarNumero</button>
+  <!--lista-->
+  <ul>
+    <li *ngFor="let numero of listaDeNumeros; let i = index">
+      {{numero}}
+      <button (click)="removerNumero(i)">Remover</button>
+    </li>
+  </ul>
+  <h3>Soma = {{soma}} </h3>
+  <h3>Media ={{media}} </h3>
+</div>
+
+<div style="max-width: 400px; margin: auto; padding: 20px;">
+  <h1>2 - lista de compra</h1>
+  <label for="nomeProd">Nome do Produto</label>
+  <input [(ngModel)]="nomeProd" id="nomeProd" type="text">
+  <label for="valorProd"><br>Valor do Produto</label>
+  <input [(ngModel)]="valorProd" id="valorProd" type="number">
+  <button (click)="adicionarProduto()" >Adicionar Produto</button>
+  <!--listas-->
+  <ul>
+    <li *ngFor="let nomeProduto of listaNomeProduto; let i = index" *ngFor="let valorProduto of listaValorProduto; let i = index">
+      {{nomeProduto}} valor {{valorProduto}}
+    </li>
+  </ul>
+
+</div>
+
