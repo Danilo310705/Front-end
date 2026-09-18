@@ -7,6 +7,7 @@
     --cor-texto: #1f2430;
     --cor-texto-suave: #6b7280;
     --cor-fundo: #f4f6fb;
+    --cor-card: #ffffff;
     --borda-raio: 16px;
     --sombra-card: 0 10px 30px rgba(31,36,48,0.08);
     --sombra-card-hover: 0 16px 40px rgba(31,36,48,0.14);
@@ -25,4 +26,140 @@
     padding: 3rem 1.5rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:var(--cor-texto);
+}
+
+.cabecalho{
+    text-align: center;
+    max-width: 40rem;
+    margin:0 auto 2.5rem;
+}
+
+.cabecalho h1{
+    font-size: calc(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.cabecalho p{
+    color: var(--cor-texto-suave);
+}
+
+/*------------ Grid responsivo dos Cards ------------*/
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--espaco);
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+.card{
+    background-color: var(--cor-card);
+    border-radius: var(--borda-raio);
+    box-shadow: var(--sombra-card);
+    padding: var(--espaco);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: entrada 0.5s ease both;
+}
+
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-card-hover);
+}
+
+.card:nth-child(2){
+    animation-delay: 0.1s;
+}
+
+.card_icon{
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:1.5rem;
+    background: var(--cor-fundo);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.card_titulo{
+    margin: 0 0 1.25rem;
+    font-size: 1.15rem;
+}
+
+@keyframes entrada{
+    from{
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*---------- Compos do formulario ----------*/
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem ;
+}
+
+.campo label{
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+    font-weight: 600;
+}
+
+.campo input{
+    width: 100%;
+    border: 1.5px solid #e2e5ee;
+    border-radius: 10px;
+    padding: 0.65rem 0.85rem;
+    font-size: 1rem;
+    transition: border-color 0.2 ease, box-shadow 0.2s ease;
+}
+
+.campo input focus{
+    outline: none;
+    border-color: var(--cor-primaira);
+    box-shadow: 0 0 0 3px rgba(76, 111, 255, 0.15);
+
+}
+
+/*---------- Resultado ----------*/
+.resultado{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--cor-fundo);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    margin-top: 0.5rem;
+    border-left: 4px solid var(--cor-sucesso);
+    transition: border-color 0.2s ease;
+
+}
+
+.resultado-negativo{
+    border-left-color: var(--cor-erro);
+}
+
+.resultado-rotulo{
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave)
+}
+
+.resultado_valor{
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cor-texto);
+}
+
+@media(max-width: 640px){
+    .card{
+        grid-template-columns: 1fr;
+    }
 }
