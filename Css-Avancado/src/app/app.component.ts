@@ -9,28 +9,25 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
 
-  valorPago : number | null = null;
-  valorItem : number | null = null;
+  valorPago = 0;
+  valorItem = 0;
   resultadoTroco : number | null = null;
 
-  calcularTroco(){
+  calcularTroco():number{
     const n1 = Number(this.valorPago) ?? 0 ;
     const n2 = Number(this.valorItem) ?? 0 ;
-    if(n1 < n2){
-      this.resultadoTroco = null;
-    }else{
-      this.resultadoTroco = n1 - n2;
-    }
+      return this.resultadoTroco = n1 - n2;
+
   };
 
-  valorDQuilo : number | null = null;
-  quantDQuilo : number | null = null;
+  valorDQuilo = 0;
+  quantDQuilo = 0;
   resultadoQuilo : number | null = null;
 
-  valorPorPeso(){
+  valorPorPeso():number{
     const n1 = Number(this.valorDQuilo) ?? 0 ;
     const n2 = Number(this.quantDQuilo) ?? 0 ;
-    this.resultadoQuilo = n1 * n2;    
+    return this.resultadoQuilo = n1 * n2;    
   }
 
 }

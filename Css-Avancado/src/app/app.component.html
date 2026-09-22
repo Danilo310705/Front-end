@@ -1,0 +1,47 @@
+<main class="pagina">
+    <header class="cabecalho">
+        <h1>🧮 Calculadoras 🧮</h1>
+        <p>Dois exercicios, dois card: troco e preço por quilo</p>
+    </header>
+
+    <section class="cards">
+        <!-- Card Calculadora de troco -->
+        <article class="card">
+            <div class="card-icone">🧮</div>
+            <h2 class="card-titulo">Calculadora de troco</h2>
+            <div class="campo">
+                <label for="valorPago">Valor Pago(R$)</label>
+                <input [(ngModel)]="valorPago" id="valorPago" type="number" min="0" step="0.01" placeholder="0.00">
+            </div>
+
+            <div class="campo">
+                <label for="valorItem">Preço do produto(R$)</label>
+                <input [(ngModel)]="valorItem" id="valorItem" type="number" min="0" step="0.01" placeholder="0.00">
+            </div>
+            <div class="resultado" [class.resultado-ngnegativo] = "valorPago < valorItem">
+                <span class="resultado-rotulo">Troco</span>
+                <span class="resultado-valor">R$ {{calcularTroco().toFixed(2)}}</span>
+            </div>
+        </article>
+
+        <!-- Card Calculadora de por quilo -->
+        <article class="card">
+            <div class="card-icone">⚖️</div>
+            <h2 class="card-titulo">Calculadora por quilo</h2>
+            <div class="campo">
+                <label for="valorDQuilo">Valor Do Quilo(R$)</label>
+                <input [(ngModel)]="valorDQuilo" id="valorDQuilo" type="number" min="0" step="0.01" placeholder="0.00">
+            </div>
+
+            <div class="campo">
+                <label for="quantDQuilo">Quantidade De Quilos</label>
+                <input [(ngModel)]="quantDQuilo" id="quantDQuilo" type="number" min="0" step="0.01" placeholder="0.00kg">
+            </div>
+            <div class="resultado">
+                <span class="resultado-rotulo">Valor total a pagar</span>
+                <span class="resultado-valor">R$ {{valorPorPeso().toFixed(2)}}</span>
+            </div>
+        </article>
+    </section>
+
+</main>
