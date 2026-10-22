@@ -1,0 +1,17 @@
+nav{
+    display: flex ;
+    gap:12px;
+    padding: 12px 16px;
+    background: #171a2b;
+}
+
+a{
+    color: #c9c9c9;
+    text-decoration: none;
+    padding: 6px 10 px;
+}
+
+a.ativo{
+    background-color: var(--cor-fundo);
+    color: #fff;
+}
